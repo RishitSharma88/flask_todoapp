@@ -2,26 +2,25 @@ Flask To-Do App (Dockerized & Deployed on AWS EC2)
 
 This project is a simple Flask-based To-Do list application, containerized using Docker and deployed on an AWS EC2 instance running Amazon Linux 2.
 Features
-•	Add tasks to a list
-•	View and manage tasks
-•	Fully dockerized
-•	Hosted on an EC2 instance
+
+        •	Add tasks to a list
+        •	View and manage tasks
+        •	Fully dockerized
+        •	Hosted on an EC2 instance
 Live Demo
 
     http://13.203.67.226
     
 Tech Stack
-•	Python with Flask
-•	HTML/CSS (Bootstrap)
-•	Docker
-•	AWS EC2 (Amazon Linux 2)
+
+        •	Python with Flask
+        •	HTML/CSS (Bootstrap)
+        •	Docker
+        •	AWS EC2 (Amazon Linux 2)
  Project Structure
-•	flask_todoapp/
+ 
+	flask_todoapp/
 	├── app.py
-	├── templates/
-	│   └── index.html
-	├── static/
-	│   └── (CSS files, etc.)
 	├── requirements.txt
 	└── Dockerfile
 
