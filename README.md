@@ -92,5 +92,53 @@ Access the App
 <img width="452" alt="image" src="https://github.com/user-attachments/assets/8e0c4b01-8620-444c-bbcd-8caa09d4162c" />
 
 
+deploy.sh – Shell Script for App Setup
+
+	Created a deploy.sh script to:
+		•	Pull the Docker image
+		•	Stop and remove any existing container
+		•	Run the container with the appropriate ports
+		•	The script automates the deployment process in a single command.
+  deploy.sh:
+
+	#!/bin/bash
+	echo "Ri****(password)" | sudo docker login -u rishit***(username) --password-stdin
+	
+	sudo docker pull rishit****(username)/flask-todo-app:latest
+	sudo docker stop todo-container || true
+	sudo docker rm todo-container || true
+	
+	sudo docker run -d -p 5000:5000 --name todo-container rishit****(username)/flask-todo-app:latest
+	
+	echo "App deployed and running on port 5000"
+
+ Give permissions to execute file:
+
+	 chmod +x deploy.sh
+
+ Run deploy.sh using:
+
+	 ./deploy.sh
+
+  Amazon S3 Access via EC2 (IAM Role)
+
+  	•	Created an S3 bucket named <todolistapp123.
+	•	Uploaded an object flask_todoapp.zip to the S3 bucket.
+	•	Attached an IAM role to the EC2 instance with the necessary S3 read permissions (e.g., AmazonS3ReadOnlyAccess).
+ Verified S3 access from within EC2 using:
+
+	 ssh -i todoapp.pem ec2-user@<PUBLIC-IP>
+	 aws s3 cp s3://todolistapp123/flask_todoapp.zip .
+	 docker build -t flask-todo-app .
+	 docker run -d -p 80:5000 flask-todo-app
+  <img width="1470" alt="Screenshot 2025-06-16 at 09 24 21" src="https://github.com/user-attachments/assets/00987e82-85f0-42c0-ad10-789dfd603b1a" />
+  <img width="1470" alt="Screenshot 2025-06-15 at 13 38 53" src="https://github.com/user-attachments/assets/5dc631b5-5b3a-402d-888e-d239bfafba5d" />
+  
+
+
+
+ 
+
+
 
 
